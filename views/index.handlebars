@@ -2,12 +2,12 @@
 
     <section class="header">
         <h1 class="title">Eat Da Burger</h1>
-        <i class="fas fa-hamburger"></i> Om nom nom <i class="fas fa-hamburger"></i> 
+        <h4><i class="fas fa-hamburger"></i> Om nom nom <i class="fas fa-hamburger"></i></h4>
     </section>
 
     <section class="main">
         <div class="row">
-            <div class="five columns">
+            <div class="four columns list">
                 <h4>Burgers I want to devour</h4>
 
                 <ul>
@@ -20,14 +20,14 @@
 
             </div>
 
-            <div class="two columns">
+            <div class="four columns eat">
                 <p>I'm hungry, click the button to let me eat!</p>
                 <form id="eat-burger">
                     <a class="button button-primary" id="eatBurger">Inhale da burger</a>
                 </form>
             </div>
 
-            <div class="five columns">
+            <div class="four columns list">
                 <h4>Burgers I've destroyed</h4>
                 <ul>
                     {{#each burger}}
@@ -39,7 +39,7 @@
 
             </div>
         </div>
-
+        <br><br>
         <form id="add-burger">
             <div class="row">
                 <div class="six columns">

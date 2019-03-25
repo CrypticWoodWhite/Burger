@@ -16,7 +16,6 @@ body {
 }
 
 .container {
-    padding: 5em;
     text-align: center;
     position: relative;
     min-height: 100%;
@@ -29,8 +28,20 @@ body {
 
 .row {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center
+}
+
+.column, .columns {
+    margin: 0;
+    float: none;
+}
+
+.eat {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
 }
 
 img {
