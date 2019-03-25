@@ -1,0 +1,59 @@
+<div class="container">
+
+    <section class="header">
+        <h1 class="title">Eat Da Burger</h1>
+        <i class="fas fa-hamburger"></i> Om nom nom <i class="fas fa-hamburger"></i> 
+    </section>
+
+    <section class="main">
+        <div class="row">
+            <div class="five columns">
+                <h4>Burgers I want to devour</h4>
+
+                <ul>
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                            {{> burgers/burger-block devoured=false}}
+                        {{/unless}}
+                    {{/each}}
+                </ul>
+
+            </div>
+
+            <div class="two columns">
+                <p>I'm hungry, click the button to let me eat!</p>
+                <form id="eat-burger">
+                    <a class="button button-primary" id="eatBurger">Inhale da burger</a>
+                </form>
+            </div>
+
+            <div class="five columns">
+                <h4>Burgers I've destroyed</h4>
+                <ul>
+                    {{#each burger}}
+                        {{#if devoured=true}}
+                            {{> burgers/burger-block devoured=true}}
+                        {{/if}}
+                    {{/each}}
+                </ul>
+
+            </div>
+        </div>
+
+        <form id="add-burger">
+            <div class="row">
+                <div class="six columns">
+                    <label for="addBurger">Add a burger to the to-be-devoured list</label>
+                    <input class="u-full-width" type="text" placeholder="Happiness on a bun..." id="addBurger">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="six columns">
+                    <a class="button button-primary" id="addBurger">Add to da list</a>
+                </div>               
+            </div>
+        </form>
+        
+    </section>
+</div>
