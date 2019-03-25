@@ -1,12 +1,12 @@
-var express = require("express");
-var burger = require("../models/burger");
+const express = require("express");
+const burger = require("../models/burger");
 
-var router = express.Router();
+const router = express.Router();
 
 
 router.get("/", function(req, res) {
-    burger.all(function(data) {
-        var hbsObject = {
+    burger.selectAll(function(data) {
+        let hbsObject = {
             burgers: data
         };
         console.log(hbsObject);
@@ -15,7 +15,7 @@ router.get("/", function(req, res) {
 });
   
 router.post("/api/burgers", function(req, res) {
-    burger.create(["name", "devoured"], [req.body.buger_name, req.body.devoured], function(res) {
+    burger.insertOne(["name", "devoured"], [req.body.buger_name, req.body.devoured], function(res) {
         res.json({
             id: result.insertId
         });
@@ -23,9 +23,9 @@ router.post("/api/burgers", function(req, res) {
 });
   
 router.put("/api/burgers/:id", function(req, res) {
-    var cond = "id = " + req.params.id;
+    let cond = "id = " + req.params.id;
   
-    burger.update(
+    burger.updateOne(
         {
             devoured: req.body.devoured
         },
@@ -37,6 +37,6 @@ router.put("/api/burgers/:id", function(req, res) {
         res.status(200).end();
         }
     );
-  });
+});
   
-  module.exports = router;
+module.exports = router;

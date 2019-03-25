@@ -1,10 +1,9 @@
 const connection = require("../config/connection");
 
-
 // function to print question marks for SQL queries
 function printQuestionMarks(num) {
-    var arr = [];
-    for (var i = 0; i < num; i++) {
+    let arr = [];
+    for (let i = 0; i < num; i++) {
         arr.push("?");
     }
     return arr.toString();
@@ -12,9 +11,9 @@ function printQuestionMarks(num) {
 
 // function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
-    var arr = [];
-    for (var key in ob) {
-        var value = ob[key];
+    let arr = [];
+    for (let key in ob) {
+        let value = ob[key];
         if (Object.hasOwnProperty.call(ob, key)) {
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
             value = "'" + value + "'";
@@ -38,7 +37,7 @@ const orm = {
 
     // function to insert new row into table
     insertOne: function(table, cols, vals, cb) {
-        let queryStr = "INSERT INTO " + table + " (" + cols.toString() + ") VALUES (" + printQuestionMarks(vals.length) + ")";
+        let queryStr = "INSERT IGNORE INTO " + table + " (" + cols.toString() + ") VALUES (" + printQuestionMarks(vals.length) + ")";
     
         connection.query(queryStr, vals, function(err, result) {
           if (err) throw err;    
