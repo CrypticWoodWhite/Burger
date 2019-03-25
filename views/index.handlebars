@@ -13,7 +13,7 @@
                 <ul>
                     {{#each burgers}}
                         {{#unless devoured}}
-                            {{> burgers/burger-block devoured=false}}
+                            <li>{{this.burger_name}}</li>
                         {{/unless}}
                     {{/each}}
                 </ul>
@@ -32,7 +32,7 @@
                 <ul>
                     {{#each burger}}
                         {{#if devoured=true}}
-                            {{> burgers/burger-block devoured=true}}
+                            <li>{{this.burger_name}}</li>
                         {{/if}}
                     {{/each}}
                 </ul>
@@ -43,7 +43,7 @@
         <form id="add-burger">
             <div class="row">
                 <div class="six columns">
-                    <label for="addBurger">Add a burger to the to-be-devoured list</label>
+                    <label for="addBurger">Add a burger to da to-be-devoured list</label>
                     <input class="u-full-width" type="text" placeholder="Happiness on a bun..." id="addBurger">
                 </div>
             </div>

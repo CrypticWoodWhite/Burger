@@ -5,12 +5,16 @@ const routes = require("./controllers/burgers_controller");
 const app = express();
 let PORT = process.env.PORT || 8080;
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+    extended: true
+}));
 app.use(express.json());
 
-app.use(express.static("./public"));
+app.use(express.static("public"));
 
-app.engine("handlebars", exphbs({ defaultLayout: "main"}));
+app.engine("handlebars", exphbs({
+    defaultLayout: "main"
+}));
 app.set("view engine", "handlebars");
 
 app.use(routes);

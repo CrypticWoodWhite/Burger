@@ -1,8 +1,13 @@
 const mysql = require("mysql");
-const keys = require("./keys");
 require("dotenv").config();
 
-const connection = mysql.createConnection(keys.mysql);
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    port: "3306",
+    password: "catherinemysql",
+    database: "burgers_db"
+});
 
 connection.connect(function(err) {
     if (err) {
