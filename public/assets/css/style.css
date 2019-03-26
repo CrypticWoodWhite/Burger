@@ -1,10 +1,10 @@
-/* html {
-    background-image: url(../images/background.jpg);
+html {
+    background-image: url(/img/burger.png);
     background-size: cover;
     background-attachment: fixed;
     height: 100%;
-    opacity: 50%;
-} */
+    /* opacity: 1; */
+}
 
 body {
     height: 100%;
@@ -12,7 +12,7 @@ body {
 
 .header {
     border-bottom: 1px solid rgb(0, 0, 0, 0.5);
-    margin: 2em 0;
+    padding: 2em 0;
 }
 
 .container {
@@ -44,12 +44,16 @@ body {
 
 .eat-burger {
     padding: 0 1em;
-    font-size: 0.7em;
+    font-size: 0.75em;
+}
+
+#addBurgerButton {
+    width: 100%;
 }
 
 img {
     height: auto;
-    max-width: 400px;
+    max-width: 200px;
 }
 
 ul {
