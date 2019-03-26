@@ -7,50 +7,40 @@
 
     <section class="main">
         <div class="row">
-            <div class="five columns list">
-                <h4>Burgers I want to devour</h4>
+        
+            <div class="four columns">
+                <h4>Add burger to da list</h4>
+                <form id="add-burger-form">
+                    <input class="u-full-width" type="text" placeholder="Happiness on a bun..." id="addBurgerName">
+                    <button type="submit" class="button button-primary" id="addBurgerButton">Yum yum</a>           
+                </form>
+            </div>
+
+            <div class="four columns" id="to-devour">
+                <h4>I'm hungry! What shall I devour?</h4>
 
                 <ul>
                     {{#each burgers}}
                         {{#unless devoured}}
-                            <li><button type="button" class="eat-burger">{{this.burger_name}}</button></li>
+                            <li><button type="button" class="eat-burger" data-id="{{id}}">{{burger_name}}</button></li>
                         {{/unless}}
                     {{/each}}
                 </ul>
 
             </div>
 
-            <div class="two columns eat">
-                <p>I'm hungry, click on a burger to let me inhale it!</p>
-            </div>
-
-            <div class="five columns list">
+            <div class="four columns">
                 <h4>Burgers I've destroyed</h4>
                 <ul>
-                    {{#each burger}}
-                        {{#if devoured=true}}
-                            <li>{{this.burger_name}}</li>
+                    {{#each burgers}}
+                        {{#if devoured}}
+                            <li>{{burger_name}}</li>
                         {{/if}}
                     {{/each}}
                 </ul>
 
             </div>
         </div>
-        <br><br>
-        <form id="add-burger-form">
-            <div class="row">
-                <div class="six columns">
-                    <label for="addBurger">Add a burger to da to-be-devoured list</label>
-                    <input class="u-full-width" type="text" placeholder="Happiness on a bun..." id="addBurgerName">
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="six columns">
-                    <button type="submit" class="button button-primary" id="addBurgerButton">Add to da list</a>
-                </div>               
-            </div>
-        </form>
         
     </section>
 </div>

@@ -1,46 +1,44 @@
 
-$(function() {
+$(document).ready(function() {
+
+    // eat burger (PUT request)
     $(".eat-burger").on("click", function(event) {
-        var id = $(this).data("id");
-        var nowDevoured = $(this).attr("devoured", true);
+        event.preventDefault();
+
+        let id = $(this).data("id");
   
-        var updNowDevoured = {
-            devoured: nowDevoured
-        };
-  
-        // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
-            data: updNowDevoured
-        }).then(
-            function(err, res) {
-                if (err) throw err;
-                console.log("changed devoured to ", nowDevoured);
-                location.reload();
-            }
-        );
+            data: {devoured: true}
+        }).then(function(err, res) {
+            if (err) throw err;
+            location.reload(true);
+        });
     });
-  
-    $("#addBurgerButton").on("submit", function(event) {
+    
+    // add burger (POST request)
+    $("#add-burger-form").on("submit", function(event) {
         event.preventDefault();
-  
-        var newBurger = {
-          name: $("#addBurgerName").val().trim(),
-          devoured: false
+
+        let burger_name = $("#addBurgerName").val().trim();
+        let newBurger = {
+          burger_name: burger_name,
+          devoured: 0
         };
   
         $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
-        }).then(
-            function(err, res) {
-                if (err) throw err;
-                console.log("created new burger");
-                location.reload();
-            }
-        );
+        }).then(function(err, res) {
+            if (err) throw err;
+            // $("#addBurgerName").val("");
+            // location.reload(true);
+        });
 
-        $("#addBurgerName").reset();
+        // why do these two lines have to be outside the .then() function to work?
+        // in preceding PUT request, the same two lines are inside the .then() function
+        $("#addBurgerName").val("");
+        location.reload(true);
     });
   
 });

@@ -12,7 +12,7 @@ body {
 
 .header {
     border-bottom: 1px solid rgb(0, 0, 0, 0.5);
-    margin-bottom: 2em;
+    margin: 2em 0;
 }
 
 .container {
@@ -28,20 +28,23 @@ body {
 
 .row {
     display: flex;
-    /* align-items: center; */
     justify-content: center
 }
 
 .column, .columns {
-    margin: 0;
+    margin: 0.5em 1em;
+    padding: 0 0.5em;
     float: none;
 }
 
-.eat {
-    padding-right: 0.5em;
-    padding-left: 0.5em;
+#to-devour {
     border-right: 1px solid lightgray;
     border-left: 1px solid lightgray;
+}
+
+.eat-burger {
+    padding: 0 1em;
+    font-size: 0.7em;
 }
 
 img {

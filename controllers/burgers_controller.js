@@ -13,13 +13,29 @@ router.get("/", function(req, res) {
         res.render("index", hbsObject);
     });
 });
+
+router.get("/api/burgers", function(req, res) {
+    burger.selectAll(function(data) {
+        res.json(data);
+    });
+});
   
 router.post("/api/burgers", function(req, res) {
-    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(res) {
-        res.json({
-            id: result.insertId
-        });
-    });
+    burger.insertOne(
+        [
+            "burger_name",
+            "devoured"
+        ],
+        [
+            req.body.burger_name,
+            req.body.devoured
+        ],
+        function(result) {
+            res.json({
+                id: result.insertId
+            });
+        }
+    );
 });
   
 router.put("/api/burgers/:id", function(req, res) {
@@ -30,11 +46,11 @@ router.put("/api/burgers/:id", function(req, res) {
             devoured: req.body.devoured
         },
         cond,
-        function(res) {
-            if (res.changedRows === 0) {
-            return res.status(404).end();
+        function(result) {
+            if (result.changedRows === 0) {
+                return res.status(404).end();
             }
-        res.status(200).end();
+            res.status(200).end();
         }
     );
 });

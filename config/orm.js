@@ -37,7 +37,7 @@ const orm = {
 
     // function to insert new row into table
     insertOne: function(table, cols, vals, cb) {
-        let queryStr = "INSERT IGNORE INTO " + table + " (" + cols.toString() + ") VALUES (" + printQuestionMarks(vals.length) + ")";
+        let queryStr = "INSERT INTO " + table + " (" + cols.toString() + ") VALUES (" + printQuestionMarks(vals.length) + ");";
     
         connection.query(queryStr, vals, function(err, result) {
           if (err) throw err;    
@@ -47,7 +47,7 @@ const orm = {
 
     // function to update one row in table
     updateOne:  function(table, objColVals, cond, cb) {
-        let queryStr = "UPDATE " + table + " SET " + objToSql(objColVals) + " WHERE " + cond;
+        let queryStr = "UPDATE " + table + " SET " + objToSql(objColVals) + " WHERE " + cond + ";";
     
         connection.query(queryStr, function(err, result) {
             if (err) throw err;
