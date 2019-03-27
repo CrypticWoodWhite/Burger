@@ -1,21 +1,20 @@
 let mysql = require("mysql");
-// require("dotenv").config();
+require("dotenv").config();
 
 let connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    port: "3306",
-    password: "catherinemysql",
-    database: "burgers_db"
+    host: process.env.JAWSHOST,
+    user: process.env.JAWSUSER,
+    port: process.env.JAWSPORT,
+    password: process.env.JAWSPWD,
+    database: process.env.JAWSDB
 });
 
-// WHY DOES THIS NOT WORK??
 // let connection = mysql.createConnection({
-//     host: process.env.MYSQLHOST,
-//     user: process.env.MYSQLUSER,
-//     port: process.env.MYSQLPORT,
-//     password: process.env.MYSQLPWD,
-//     database: process.env.MYSQL
+//     host: "y2w3wxldca8enczv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+//     user: "ybo9q2j2urrk9wd7",
+//     port: 3306,
+//     password: "kcnp5ohp9ey12ib9",
+//     database: "tl71szcms6st5t01"
 // });
 
 connection.connect(function(err) {
