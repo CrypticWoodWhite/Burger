@@ -9,4 +9,4 @@ HTML/CSS, JavaScript, JQuery, Node.js, Express.js, Express.js handlebars, MySQL
 ### Links
 - https://eatdaburger-cww.herokuapp.com/
 - https://github.com/CrypticWoodWhite/Burger
-- https://crypticwoodwhite.github.io/
+- https://crypticwoodwhite.github.io/portfolio.html
