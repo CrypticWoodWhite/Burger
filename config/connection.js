@@ -9,14 +9,6 @@ let connection = mysql.createConnection({
     database: process.env.JAWSDB
 });
 
-// let connection = mysql.createConnection({
-//     host: "y2w3wxldca8enczv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-//     user: "ybo9q2j2urrk9wd7",
-//     port: 3306,
-//     password: "kcnp5ohp9ey12ib9",
-//     database: "tl71szcms6st5t01"
-// });
-
 connection.connect(function(err) {
     if (err) {
         console.error("error connecting: " + err.stack);
