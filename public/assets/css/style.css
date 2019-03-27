@@ -3,7 +3,6 @@ html {
     background-size: cover;
     background-attachment: fixed;
     height: 100%;
-    /* opacity: 1; */
 }
 
 body {
@@ -19,7 +18,7 @@ body {
     text-align: center;
     position: relative;
     min-height: 100%;
-    background: rgb(255, 255, 255, 0.7);
+    background: rgb(255, 255, 255, 0.9);
 }
 
 .title {
@@ -45,6 +44,7 @@ body {
 .eat-burger {
     padding: 0 1em;
     font-size: 0.75em;
+    background-color: white;
 }
 
 #addBurgerButton {
