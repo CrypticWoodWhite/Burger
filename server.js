@@ -5,13 +5,14 @@ const routes = require("./controllers/burgers_controller");
 const app = express();
 let PORT = process.env.PORT || 8080;
 
+// middleware
 app.use(express.urlencoded({
     extended: true
 }));
 app.use(express.json());
-
 app.use(express.static("./public/assets"));
 
+// handlebars
 app.engine("handlebars", exphbs({
     defaultLayout: "main"
 }));

@@ -36,7 +36,7 @@ $(document).ready(function() {
         });
 
         // why do these two lines have to be outside the .then() function to work?
-        // in preceding PUT request, the same two lines are inside the .then() function
+        // in preceding PUT request, the same line is inside the .then() function
         $("#addBurgerName").val("");
         location.reload(true);
     });
